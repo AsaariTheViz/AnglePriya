@@ -2,6 +2,7 @@ import math
 import time
 import os
 import json
+from pyrogram import enums
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
@@ -56,7 +57,7 @@ async def progress_for_pyrogram(current, total, ud_type, message, start, bot,
 
         try:
             await message.edit_text("{}{}".format(ud_type, tmp),
-                                    reply_markup=reply_markup)
+                                    reply_markup=reply_markup, parse_mode=enums.ParseMode.MARKDOWN)
         except:
             pass
 

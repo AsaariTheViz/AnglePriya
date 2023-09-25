@@ -13,7 +13,7 @@ from Uploader.utitles import *
 from Uploader.script import Translation
 from Uploader.functions.database import *
 from Uploader.utitles import random_dirs, fix_thumb
-from Uploader.functions.help_Nekmo_ffmpeg import thumb_create
+from Uploader.functions.thumb_help import Take_screen_shot, Get_video_dimensions
 from Uploader.config import DONT_SEND_TASK, SUDO_USERS, TOTAL_TASKS
 from Uploader.functions.display_progress import progress_for_pyrogram
 

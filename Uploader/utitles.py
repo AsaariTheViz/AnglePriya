@@ -67,15 +67,15 @@ async def Mdata03(download_directory):
 
 
 async def make_thumb(thumb_image_path, width, height):
-  thumb_size = (width, height)
-  try:
-    img = Image.new('RGB', thumb_size, (85, 85, 85))
-    img.save(thumb_image_path)
-  except:
-    img = Image.new('RGB', (1280, 1280), (85, 85, 85))
-    img.save(thumb_image_path)
+    thumb_size = (width, height)
+    try:
+        img = Image.new('RGB', thumb_size, (85, 85, 85))
+        img.save(thumb_image_path)
+    except:
+        img = Image.new('RGB', (1280, 1280), (85, 85, 85))
+        img.save(thumb_image_path)
 
-  return thumb_image_path
+    return thumb_image_path
 
 
 async def fix_thumb(thumb):
@@ -94,16 +94,16 @@ async def fix_thumb(thumb):
                 img.save(thumb, "JPEG")
     except Exception as e:
         print(e)
-        thumb = None 
-       
+        thumb = None
+
     return width, height, thumb
 
+
 def random_dirs(chat_id):
-    rendem = random_char(5)
+    rendem = random_char(3)
     download_dir = Config.DOWNLOAD_LOCATION
-    dir_for_user = f"{download_dir}/{rendem}-{str(chat_id)}/"
+    dir_for_user = f"{download_dir}/{rendem}-{chat_id}/"
     status = f"{dir_for_user}status.json"
     thumb_path = f"{dir_for_user}image.jpg"
 
-    return dir_for_user,status,thumb_path
-
+    return dir_for_user, status, thumb_path

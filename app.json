@@ -5,11 +5,10 @@
     "telegram",
     "best",
     "open",
-    "source",
-    "ffmpeg"
+    "source"
   ],
   "website": "https://github.com/crazebotz/Url-Uploader-Z",
-  "repository": "https://github.com/crazebotz/Url-Uploader-Z",
+  "repository": "https://github.com/crazebotz/URL-Uploader-MY",
   "env": {
     "WEBHOOK": {
       "description": "Don't Need To change - Setting this to True when in env mode",
@@ -40,13 +39,15 @@
       "value": ""
     }
   },
-  "addons": [
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "heroku/python"
+    }
   ],
-  "buildpacks": [{
-    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-  }, {
-    "url": "heroku/python"
-  }],
   "formation": {
     "worker": {
       "quantity": 1,
@@ -54,4 +55,3 @@
     }
   }
 }
-

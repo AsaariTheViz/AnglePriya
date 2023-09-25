@@ -36,7 +36,7 @@ If you don't want to receive time gap, please consider to upgrade /plan'''
 class Config(object):
     WEBHOOK = os.environ.get("BOT_TOKEN", False)
     # get a token from @BotFather
-    BOT_TOKEN = "6209873095:AAEd3Lsewz2XYfWrUB0HlpowXhfL0y5whNA"
+    BOT_TOKEN = "6531413608:AAGEtN74NUFOiD8tj16Gv1o-5SElGUbga_I" #instahero bot
 
     # Get these values from my.telegram.org
     API_ID = 15004995

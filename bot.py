@@ -23,29 +23,31 @@
 import os
 import shutil
 from pyrogram import Client
+from pyrogram import enums
 from Uploader.config import Config
 
 
 if __name__ == "__main__":
 
-  if not os.path.isdir(Config.DOWNLOAD_LOCATION):
-    os.makedirs(Config.DOWNLOAD_LOCATION)
+    if not os.path.isdir(Config.DOWNLOAD_LOCATION):
+        os.makedirs(Config.DOWNLOAD_LOCATION)
 
-  else:
-    try:
-      shutil.rmtree(Config.DOWNLOAD_LOCATION)
-      os.makedirs(Config.DOWNLOAD_LOCATION)
-    except:
-        pass    
+    else:
+        try:
+            shutil.rmtree(Config.DOWNLOAD_LOCATION)
+            os.makedirs(Config.DOWNLOAD_LOCATION)
+        except:
+            pass
 
-  plugins = dict(root="Uploader")
-  Uploadbot = Client("All-Url-Uploader",
-                     bot_token=Config.BOT_TOKEN,
-                     api_id=Config.API_ID,
-                     api_hash=Config.API_HASH,
-                     plugins=plugins,
-                     workers=12)
-  os.system("clear")
-  print("Bot Started :)")
-  Uploadbot.run()
+    plugins = dict(root="Uploader")
+    Uploadbot = Client("All-Url-Uploader",
+                       bot_token=Config.BOT_TOKEN,
+                       api_id=Config.API_ID,
+                       api_hash=Config.API_HASH,
+                       plugins=plugins,
+                       workers=12)
 
+    
+    os.system("clear")
+    print("Bot Started :)")
+    Uploadbot.run()

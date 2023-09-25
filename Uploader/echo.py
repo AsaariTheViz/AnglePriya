@@ -94,23 +94,23 @@ async def link_echo(_, update):
 
     link = update.text
     res = url_exists(link)
-  
+
     if res == False:
-      return await sentmsg.edit_text(
+        return await sentmsg.edit_text(
             "This link is not accessible or not direct download link",
             disable_web_page_preview=True)
-    
+
     try:
-      url = await final_url(link)
+        url = await final_url(link)
     except:
-      return await sentmsg.edit_text(
+        return await sentmsg.edit_text(
             "This link is not accessible or not direct download link",
             disable_web_page_preview=True)
-      
+
     await asyncio.sleep(0.2)
 
-    file_name, file_size = await get_details(url)
-    
+    file_name, file_extention, file_size, content_type = await get_details(url)
+
     if file_size < 1:
         return await sentmsg.edit_text(
             "This link is not accessible or not direct download link",

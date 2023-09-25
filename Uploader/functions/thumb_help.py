@@ -1,6 +1,6 @@
 # MIT License
 
-# Copyright (c) 2022 Hash Minner
+# Copyright (c) 2023 Rahul Thakor
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -20,33 +20,39 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE
 
-import os
 
-from urllib.parse import urlparse
-def get_file_extension_from_url(url):
-    url_path = urlparse(url).path
-    basename = os.path.basename(url_path)
-    return basename.split(".")[-1]
+# MIT License
+# Copyright (c) 2023 Rahul Thakor
+import random
+from moviepy.editor import VideoFileClip
 
 
-def get_resolution(info_dict):
-    if {"width", "height"} <= info_dict.keys():
-        width = int(info_dict['width'])
-        height = int(info_dict['height'])
-    # https://support.google.com/youtube/answer/6375112
-    elif info_dict['height'] == 1080:
-        width = 1920
-        height = 1080
-    elif info_dict['height'] == 720:
-        width = 1280
-        height = 720
-    elif info_dict['height'] == 480:
-        width = 854
-        height = 480
-    elif info_dict['height'] == 360:
-        width = 640
-        height = 360
-    elif info_dict['height'] == 240:
-        width = 426
-        height = 240
-    return (width, height)
+def generate_random_number(lenght):
+    return random.randint(1, lenght)
+
+
+# Take a screenshot from video for thumbnail
+async def Take_screen_shot(video_file, output_directory, s_time=60):
+    try:
+        s_time = generate_random_number(s_time)
+        clip = VideoFileClip(video_file)
+        duration = round(clip.duration)
+        if duration > 60:
+            s_time = generate_random_number(duration - 1)
+
+        clip.save_frame(output_directory, t=s_time)
+        clip.close()
+        return output_directory
+    except:
+        return None
+
+
+async def Get_video_dimensions(video_path):
+    try:
+        clip = VideoFileClip(video_path)
+        width, height = clip.size
+        duration = round(clip.duration)
+        clip.close()
+        return width, height, duration
+    except:
+        return 320, 320, 0
