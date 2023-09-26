@@ -23,8 +23,7 @@
 import os
 
 
-SUDO_USERS = [1953040213, 5144980226, 874964742,
-              839221827, 5294965763, 5317652430, 5141357700]
+SUDO_USERS = [5179011789]
 TOTAL_TASKS = []
 DONT_SEND_TASK = '''Please don't send new task until the previous one has been completed.
 
@@ -36,26 +35,26 @@ If you don't want to receive time gap, please consider to upgrade /plan'''
 class Config(object):
     WEBHOOK = os.environ.get("BOT_TOKEN", False)
     # get a token from @BotFather
-    BOT_TOKEN = "6531413608:AAGEtN74NUFOiD8tj16Gv1o-5SElGUbga_I" #instahero bot
+    BOT_TOKEN = "6500213817:AAHz505wFvYpaxhuaCHil7C4o04gtyV5uog" #instahero bot
 
     # Get these values from my.telegram.org
-    API_ID = 15004995
-    API_HASH = "0209b6aa79a68ac5a101c9aeac18e8dd"
+    API_ID = 25918874
+    API_HASH = "87c7c525932cf3d753bea33786ad71ee"
 
     # No need to change
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     ADL_BOT_RQ = {}
     CHUNK_SIZE = 128
-    TG_MAX_FILE_SIZE = 2147483648
+    TG_MAX_FILE_SIZE = 4194304000
     HTTP_PROXY = ""
     PROCESS_MAX_TIMEOUT = 3700
 
     # TG Ids
-    LOG_CHANNEL = -1001492018811
-    OWNER_ID = 5294965763
+    LOG_CHANNEL = -1001811301225
+    OWNER_ID = 5179011789
 
     # bot username without @
-    BOT_USERNAME = "AdvanceUrlUploaderBot"
+    BOT_USERNAME = "Lasaar_Bot"
 
     # auth users
     AUTH_USERS = [OWNER_ID]
