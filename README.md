@@ -43,7 +43,7 @@
 <details><summary>🧡Deploy To Heroku🧡</summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/crazebotz/Url-Uploader-Z">
+<a href="https://heroku.com/deploy?template=https://github.com/GitXBot101/AnglePriya">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 </p>
